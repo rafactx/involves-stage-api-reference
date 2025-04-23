@@ -1,0 +1,27 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space       # Consistência com o Prettier
+indent_size = 2            # Legibilidade em arquivos .md, .js, .ts etc.
+end_of_line = lf           # Unix-style, compatível com macOS/Linux/CI
+insert_final_newline = true # Garante que arquivos terminem com uma nova linha
+trim_trailing_whitespace = true # Remove espaços desnecessários ao salvar
+
+[*.md]
+trim_trailing_whitespace = false  # Evita remover espaços usados para quebra de linha no Markdown
+
+[*.yml]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[*.ts]
+indent_size = 2
+
+[*.vue]
+indent_size = 2
+
+[*.sh]
+end_of_line = lf

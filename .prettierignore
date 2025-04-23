@@ -1,0 +1,8 @@
+node_modules
+dist
+.vitepress/cache
+.vitepress/dist
+.vitepress/temp
+*.log
+*.svg
+*.ico

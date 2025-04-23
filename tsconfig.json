@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node", // Trocar de 'Bundler' para 'Node' para garantir maior compatibilidade com ESM
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["vitepress/client"]
+  },
+  "include": ["docs/.vitepress/config.mts"]
+}

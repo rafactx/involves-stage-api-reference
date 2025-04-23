@@ -1,0 +1,20 @@
+# Node
+node_modules/
+dist/
+pnpm-lock.yaml
+
+# System
+.DS_Store
+.env
+*.log
+
+# VitePress
+.vitepress/cache/
+.vitepress/dist/
+.vitepress/temp/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/.vitepress/temp/
+
+# VSCode
+.vscode/
