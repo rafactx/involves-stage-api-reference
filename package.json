@@ -2,31 +2,50 @@
   "name": "involves-stage-api-reference",
   "version": "1.0.0",
   "description": "Documentação oficial da API Involves Stage com VitePress",
-  "scripts": {
+  "type": "module",
+  "author": "Rafael Teixeira",
+  "license": "MIT",
+  "packageManager": "pnpm@10.9.0",
+    "scripts": {
+    "dev": "vite",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint . --ext .ts,.mts,.js,.md --ignore-path .gitignore",
+    "lint": "eslint . --ext .ts,.js,.md --ignore-path .gitignore",
+    "check:lint": "eslint . --ext .ts,.js,.md",
     "format": "prettier --write .",
     "check:format": "prettier --check .",
-    "check:lint": "eslint . --ext .ts,.mts,.js,.md"
+    "fix:labels": "node scripts/update-codegroup-labels.js",
+    "clean:dividers": "node scripts/remove-asterisk-dividers.js",
+    "commit": "cz"
   },
-  "engines": {
+    "engines": {
     "node": ">=18.0.0 <=22.14.0",
     "npm": ">=8.0.0"
   },
-  "author": "Rafael Teixeira",
-  "license": "MIT",
-  "type": "module",
-  "dependencies": {
+    "dependencies": {
+    "@vueuse/motion": "^3.0.3",
+    "lucide-vue": "^0.510.0",
+    "lucide-vue-next": "^0.510.0",
+    "slugify": "^1.6.6",
     "vitepress": "^1.2.0"
   },
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
-  "devDependencies": {
+    "devDependencies": {
+    "@types/node": "^22.15.17",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.31.0",
     "eslint": "^9.25.1",
     "eslint-plugin-vue": "^10.0.0",
-    "prettier": "^3.5.3"
-  }
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "vite": "^6.3.5",
+    "vue": "^3.5.13",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  } 
 }

@@ -1,7 +1,6 @@
 # Node
 node_modules/
 dist/
-pnpm-lock.yaml
 
 # System
 .DS_Store

@@ -1,0 +1,90 @@
+/* ================================
+   🎨 Design Tokens - Involves
+   Escalável, semântico e com suporte a dark mode
+================================ */
+
+/* ===== MODO CLARO ===== */
+:root {
+  /* Cores principais */
+  --color-stage:         #4693f8;
+  --color-club:          #00b7c2;
+  --color-involves:      #fc4949;
+
+  /* Escalas - Involves Stage */
+  --color-stage-10:      #e7f1fe;
+  --color-stage-20:      #d8e8fe;
+  --color-stage-40:      #c0dafd;
+  --color-stage-60:      #99c4fb;
+  --color-stage-80:      #5a9ff9;
+  --color-stage-100:     #4693f8;
+  --color-stage-110:     #4284e3;
+  --color-stage-120:     #3457a4;
+  --color-stage-140:     #2c3b7d;
+  --color-stage-160:     #272a65;
+  --color-stage-180:     #241f55;
+
+  /* Escalas - Involves Red */
+  --color-involves-10:   #ffe7e7;
+  --color-involves-20:   #fed8d8;
+  --color-involves-40:   #fec1c1;
+  --color-involves-60:   #fd9b9b;
+  --color-involves-80:   #fc5d5d;
+  --color-involves-100:  #fc4949;
+  --color-involves-110:  #e44348;
+  --color-involves-120:  #982e44;
+  --color-involves-140:  #6a2241;
+  --color-involves-160:  #4e1a40;
+  --color-involves-180:  #3c163f;
+
+  /* Neutros e utilidades */
+  --color-white:         #ffffff;
+  --color-black:         #000000;
+  --color-border:        #e5e7eb;
+  --color-surface:       #f9f8fb;       /* fundo neutro suave */
+  --color-hover:         var(--color-involves);
+
+  /* Texto */
+  --text-heading:        #1f0e3d;
+  --text-body:           #6b7280;
+  --text-on-primary:     #ffffff;
+  --text-on-dark:        #ffffff;
+  --text-on-light:       var(--text-heading);
+
+  /* Tokens visuais */
+  --radius-default:      0.5rem;
+  --transition-fast:     all 0.3s ease-in-out;
+
+  /* 🎯 Override dos tokens do VitePress */
+  --vp-c-brand-1:        var(--color-involves);        /* Botões e destaques */
+  --vp-c-brand-soft:     var(--color-involves-10);     /* Hover leve */
+  --vp-c-bg:             var(--color-white);
+  --vp-c-bg-soft:        var(--color-surface);         /* Cards e caixas */
+  --vp-c-bg-alt:         var(--color-stage-10);        /* Ex: alertas/info */
+  --vp-c-text-1:         var(--text-on-light);         /* Título / conteúdo */
+  --vp-c-text-2:         var(--text-body);             /* Subtítulos / tags */
+  --vp-nav-bg-color:     var(--color-white);
+  --vp-nav-text-color:   var(--text-heading);
+  --vp-nav-hover-color:  var(--color-hover);
+}
+
+/* ===== MODO ESCURO ===== */
+:root.dark {
+  --color-border:        #ffffff20;
+  --color-bg:            #0f172a;
+
+  /* Texto */
+  --text-on-light:       #e2e8f0;
+  --text-on-dark:        #f8fafc;
+
+  /* 🎯 Override dos tokens do VitePress (modo escuro) */
+  --vp-c-brand-1:        var(--color-involves);
+  --vp-c-brand-soft:     var(--color-involves-120);
+  --vp-c-bg:             #181028;
+  --vp-c-bg-soft:        #221b36;
+  --vp-c-bg-alt:         #2b2140;
+  --vp-c-text-1:         var(--text-on-dark);
+  --vp-c-text-2:         var(--color-stage-40);
+  --vp-nav-bg-color:     #1f0e3d;
+  --vp-nav-text-color:   var(--text-on-primary);
+  --vp-nav-hover-color:  var(--color-involves);
+}
