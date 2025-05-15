@@ -1,33 +1,44 @@
 <template>
-  <a href="/" aria-label="Ir para a página inicial">
+  <!-- 🔗 Link para a home com rótulo acessível -->
+  <a href="/" aria-label="Ir para a página inicial" class="logo-link">
     <img
       :src="isDark ? darkLogo : lightLogo"
       alt="Logo Involves"
       class="logo"
+      width="120"
+      height="32"
+      loading="eager"
+      decoding="async"
     />
   </a>
 </template>
 
-<script setup>
+<script setup lang="ts">
+// 🎯 Detecta modo escuro via VitePress
 import { useData } from 'vitepress'
-
 const { isDark } = useData()
 
-// Certifique-se que esses arquivos estão em /public/
+// 🖼️ Caminhos das logos (pasta public/)
 const lightLogo = '/logo-involves-light.png'
 const darkLogo = '/logo-involves-dark.png'
 </script>
 
 <style scoped>
+.logo-link {
+  display: inline-block;
+  line-height: 0; /* remove espaço extra ao redor da img */
+}
+
 .logo {
-  height: 32px;
   display: block;
-  cursor: pointer;
+  height: auto;
+  max-height: 32px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 </style>

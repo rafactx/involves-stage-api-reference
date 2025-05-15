@@ -2,43 +2,43 @@
 layout: home
 title: Guia da API
 hero:
-  name: "Guia da API"
-  tagline: "Boas práticas para se conectar com segurança à API do Involves Stage."
+  name: 'Guia da API'
+  tagline: 'Boas práticas para se conectar com segurança à API do Involves Stage.'
   image:
-    src: "/guia-da-api.png"
-    alt: "Guia da API"
+    src: '/guia-da-api.png'
+    alt: 'Guia da API'
   actions:
     - theme: brand
       text: Ver Endpoints →
       link: /pt/endpoints/README
     - theme: alt
       text: Página Inicial
-      link: /
+      link: /pt/
 features:
-  - title: "📘 Introdução Rápida"
-    details: "Entenda o que é o Involves Stage e como a API pode te ajudar."
-    link: "#introducao-rapida"
-  - title: "🔐 Autenticação"
-    details: "Como gerar e usar o token de acesso com segurança."
-    link: "#autenticacao"
-  - title: "🌍 Ambientes"
-    details: "Saiba como alternar entre produção e homologação."
-    link: "#ambientes"
-  - title: "📦 Versionamento"
-    details: "Entenda as diferentes versões disponíveis e escolha a ideal para sua integração."
-    link: "#versionamento"
-  - title: "📥 Requisições e Respostas"
-    details: "Monte chamadas completas com headers, corpo e retorno estruturado."
-    link: "#requisicoes-e-respostas"
-  - title: "⚠️ Tratamento de Erros"
-    details: "Veja os códigos de erro e como lidar com eles corretamente."
-    link: "#erros-comuns"
-  - title: "🔗 HATEOAS"
-    details: "Links automáticos para facilitar a navegação entre recursos."
-    link: "#hateoas"
-  - title: "📚 Exemplos por linguagem"
-    details: "cURL, JavaScript (fetch), Python (requests) e Node.js (axios)."
-    link: "#exemplos-de-uso-por-linguagem"
+  - title: '📘 Introdução Rápida'
+    details: 'Entenda o que é o Involves Stage e como a API pode te ajudar.'
+    link: '#introducao-rapida'
+  - title: '🔐 Autenticação'
+    details: 'Como gerar e usar o token de acesso com segurança.'
+    link: '#autenticacao'
+  - title: '🌍 Ambientes'
+    details: 'Saiba como alternar entre produção e homologação.'
+    link: '#ambientes'
+  - title: '📦 Versionamento'
+    details: 'Entenda as diferentes versões disponíveis e escolha a ideal para sua integração.'
+    link: '#versionamento'
+  - title: '📥 Requisições e Respostas'
+    details: 'Monte chamadas completas com headers, corpo e retorno estruturado.'
+    link: '#requisicoes-e-respostas'
+  - title: '⚠️ Tratamento de Erros'
+    details: 'Veja os códigos de erro e como lidar com eles corretamente.'
+    link: '#erros-comuns'
+  - title: '🔗 HATEOAS'
+    details: 'Links automáticos para facilitar a navegação entre recursos.'
+    link: '#hateoas'
+  - title: '📚 Exemplos por linguagem'
+    details: 'cURL, JavaScript (fetch), Python (requests) e Node.js (axios).'
+    link: '#exemplos-de-uso-por-linguagem'
 ---
 
 <style scoped>
@@ -130,15 +130,15 @@ Abaixo estão exemplos de como fazer uma requisição **GET** para listar pontos
 
 Abaixo estão os erros mais comuns que a API pode retornar em chamadas inválidas:
 
-| Código | Descrição                |
-|--------|--------------------------|
-| 🔴 `400`  | Requisição inválida        |
-| 🔐 `401`  | **Não autenticado**        |
-| 🚫 `403`  | Acesso negado              |
-| 🔍 `404`  | Recurso não encontrado     |
-| 💥 `500`  | Erro interno no servidor   |
+| Código   | Descrição                |
+| -------- | ------------------------ |
+| 🔴 `400` | Requisição inválida      |
+| 🔐 `401` | **Não autenticado**      |
+| 🚫 `403` | Acesso negado            |
+| 🔍 `404` | Recurso não encontrado   |
+| 💥 `500` | Erro interno no servidor |
 
-::: tip 💡 **Dica** 
+::: tip 💡 **Dica**
 Sempre verifique o corpo da resposta. Alguns erros trazem detalhes úteis no campo `message` da resposta JSON.
 :::
 
@@ -160,10 +160,10 @@ Exemplo:
 
 Todos os endpoints trazem exemplos práticos nos seguintes formatos:
 
-* 🟢 `cURL`
-* 🟡 `JavaScript (Fetch)`
-* 🔵 `Python (requests)`
-* 🟣 `Node.js (axios)`
+- 🟢 `cURL`
+- 🟡 `JavaScript (Fetch)`
+- 🔵 `Python (requests)`
+- 🟣 `Node.js (axios)`
 
 <hr />
 

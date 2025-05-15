@@ -1,27 +1,19 @@
 <template>
   <Layout>
-    <!-- 🌟 Hero + features (home personalizada) -->
+    <!-- 🌟 Home personalizada com Hero + destaques -->
     <main v-if="showHome" class="home home-container">
       <HeroImageMotion class="z-10" />
       <MyHero />
-
       <section class="features">
-        <MyFeature
-          v-for="(feature, index) in features"
-          :key="feature.title"
-          :title="feature.title"
-          :details="feature.details"
-          :link="feature.link"
-          :index="index"
-        />
+        <FeatureList />
       </section>
     </main>
 
-    <!-- 📄 Conteúdo renderizado da página (markdown) -->
+    <!-- 📄 Conteúdo Markdown (renderizado via slot) -->
     <slot />
 
-    <!-- 🔝 Botão de voltar ao topo (exibido globalmente se rolar) -->
-    <BackToTop />
+    <!-- 🔝 Botão "voltar ao topo" global -->
+    <BackToTop v-if="scrolled" />
   </Layout>
 </template>
 
@@ -31,65 +23,47 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
 import { useRouter, useRoute } from 'vitepress'
 
-const router = useRouter()
-const route = useRoute()
-
-onMounted(() => {
-  if (route.path === '/') {
-    const lang = navigator.language || navigator.userLanguage
-    const preferred = lang.toLowerCase().slice(0, 2)
-
-    const supported = ['pt', 'en', 'es', 'fr']
-    const fallback = 'pt'
-
-    const targetLang = supported.includes(preferred) ? preferred : fallback
-
-    router.go(`/${targetLang}/`)
-  }
-})
-
-
-// Componentes personalizados
+// 🧩 Componentes customizados do tema
+import FeatureList from './components/FeatureList.vue'
 import MyHero from './components/MyHero.vue'
 import MyFeature from './components/MyFeature.vue'
 import HeroImageMotion from './components/HeroImageMotion.vue'
 import BackToTop from './components/BackToTop.vue'
 
+// 🎨 Layout base do VitePress
 const { Layout } = DefaultTheme
 const { frontmatter } = useData()
+const router = useRouter()
+const route = useRoute()
 
-// Exibe a home personalizada apenas se layout === 'home'
+// 📌 Mostrar layout customizado se for página home
 const showHome = computed(() => frontmatter.value.layout === 'home')
 
-// Estado para controle de rolagem (caso precise futuramente)
+// 📌 Detecta rolagem para mostrar botão flutuante
 const scrolled = ref(false)
 const handleScroll = () => {
   scrolled.value = window.scrollY > 300
 }
 
+// 🌍 Redirecionamento automático com base no idioma do navegador
+const handleLanguageRedirect = () => {
+  if (route.path === '/') {
+    const lang = navigator.language?.toLowerCase().slice(0, 2) || 'pt'
+    const supported = ['pt', 'en', 'es', 'fr']
+    const fallback = 'pt'
+    const targetLang = supported.includes(lang) ? lang : fallback
+    router.go(`/${targetLang}/`)
+  }
+}
+
+// 📦 Lista de recursos visuais na home
+// 🚀 Inicializa listeners e redirecionamento
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  handleLanguageRedirect()
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-
-// Cards da home (com delay animado por index)
-const features = ref([
-  {
-    title: '📘 Guia da API',
-    details: 'Autenticação, ambientes, erros comuns e boas práticas para começar com segurança.',
-    link: '/pt/guia-da-api'
-  },
-  {
-    title: '⚙️ Endpoints REST',
-    details: 'Explore todos os endpoints organizados por módulos como Colaborador, Produto, PDV, entre outros.',
-    link: '/pt/endpoints/README'
-  },
-  {
-    title: '🧠 Central de Ajuda',
-    details: 'Explore materiais complementares, tutoriais e respostas para dúvidas comuns sobre o uso do Involves Stage.',
-    link: 'https://help.involves.com/hc/pt-br'
-  }
-])
 </script>

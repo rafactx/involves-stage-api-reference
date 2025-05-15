@@ -1,5 +1,6 @@
 <template>
   <CustomCodeGroup>
+    <!-- 🌐 cURL -->
     <template #tab-0>
       <CustomTabLabel src="/icons/curl-icon.svg" alt="cURL">cURL</CustomTabLabel>
     </template>
@@ -9,6 +10,7 @@
   -H 'Accept: application/json'</code></pre>
     </template>
 
+    <!-- 💻 JavaScript (Fetch API) -->
     <template #tab-1>
       <CustomTabLabel src="/icons/js-icon.svg" alt="JavaScript">JavaScript</CustomTabLabel>
     </template>
@@ -20,11 +22,12 @@
     'Accept': 'application/json'
   }
 })
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => console.log(data))
-  .catch(error => console.error(error));</code></pre>
+  .catch(err => console.error(err));</code></pre>
     </template>
 
+    <!-- 🐍 Python (requests) -->
     <template #tab-2>
       <CustomTabLabel src="/icons/python-icon.svg" alt="Python">Python</CustomTabLabel>
     </template>
@@ -41,11 +44,12 @@ response = requests.get(url, headers=headers)
 print(response.json())</code></pre>
     </template>
 
+    <!-- 🟢 Node.js (axios) -->
     <template #tab-3>
       <CustomTabLabel src="/icons/nodejs-icon.svg" alt="Node.js">Node.js</CustomTabLabel>
     </template>
     <template #panel-3>
-      <pre><code class="language-js">const axios = require('axios');
+      <pre><code class="language-js">const axios = require('axios')
 
 axios.get('https://SeuDominio.involves.com/v1/123/pointofsale', {
   headers: {
@@ -53,8 +57,8 @@ axios.get('https://SeuDominio.involves.com/v1/123/pointofsale', {
     'Accept': 'application/json'
   }
 })
-.then(response => console.log(response.data))
-.catch(error => console.error(error));</code></pre>
+  .then(res => console.log(res.data))
+  .catch(err => console.error(err))</code></pre>
     </template>
   </CustomCodeGroup>
 </template>
