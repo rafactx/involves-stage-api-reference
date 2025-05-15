@@ -1,16 +1,16 @@
 /* ================================
-   🎨 Design Tokens - Involves
-   Escalável, semântico e com suporte a dark mode
+   🎨 Design Tokens - Involves Stage
+   Estrutura escalável, semântica e com suporte completo a dark mode
 ================================ */
 
-/* ===== MODO CLARO ===== */
+/* ===== ☀️ MODO CLARO ===== */
 :root {
-  /* Cores principais */
+  /* 🌈 Paleta base da marca */
   --color-stage:         #4693f8;
   --color-club:          #00b7c2;
   --color-involves:      #fc4949;
 
-  /* Escalas - Involves Stage */
+  /* 🔵 Escala de tons - Azul (Stage) */
   --color-stage-10:      #e7f1fe;
   --color-stage-20:      #d8e8fe;
   --color-stage-40:      #c0dafd;
@@ -23,7 +23,7 @@
   --color-stage-160:     #272a65;
   --color-stage-180:     #241f55;
 
-  /* Escalas - Involves Red */
+  /* 🔴 Escala de tons - Vermelho (Involves) */
   --color-involves-10:   #ffe7e7;
   --color-involves-20:   #fed8d8;
   --color-involves-40:   #fec1c1;
@@ -36,47 +36,48 @@
   --color-involves-160:  #4e1a40;
   --color-involves-180:  #3c163f;
 
-  /* Neutros e utilidades */
+  /* ⚪️ Neutros e utilitários */
   --color-white:         #ffffff;
   --color-black:         #000000;
   --color-border:        #e5e7eb;
-  --color-surface:       #f9f8fb;       /* fundo neutro suave */
+  --color-surface:       #f9f8fb; /* fundo neutro suave */
   --color-hover:         var(--color-involves);
 
-  /* Texto */
+  /* 📝 Cores de texto */
   --text-heading:        #1f0e3d;
   --text-body:           #6b7280;
   --text-on-primary:     #ffffff;
   --text-on-dark:        #ffffff;
   --text-on-light:       var(--text-heading);
 
-  /* Tokens visuais */
+  /* 🧱 Tokens visuais globais */
   --radius-default:      0.5rem;
   --transition-fast:     all 0.3s ease-in-out;
 
-  /* 🎯 Override dos tokens do VitePress */
-  --vp-c-brand-1:        var(--color-involves);        /* Botões e destaques */
-  --vp-c-brand-soft:     var(--color-involves-10);     /* Hover leve */
-  --vp-c-bg:             var(--color-white);
-  --vp-c-bg-soft:        var(--color-surface);         /* Cards e caixas */
-  --vp-c-bg-alt:         var(--color-stage-10);        /* Ex: alertas/info */
-  --vp-c-text-1:         var(--text-on-light);         /* Título / conteúdo */
-  --vp-c-text-2:         var(--text-body);             /* Subtítulos / tags */
-  --vp-nav-bg-color:     var(--color-white);
-  --vp-nav-text-color:   var(--text-heading);
-  --vp-nav-hover-color:  var(--color-hover);
+  /* 🎯 Overrides de tokens padrão do VitePress */
+  --vp-c-brand-1:        var(--color-involves);        /* Ex: botão principal */
+  --vp-c-brand-soft:     var(--color-involves-10);     /* Hover suave */
+  --vp-c-bg:             var(--color-white);           /* Fundo geral */
+  --vp-c-bg-soft:        var(--color-surface);         /* Cards e containers */
+  --vp-c-bg-alt:         var(--color-stage-10);        /* Informativos / blocos */
+  --vp-c-text-1:         var(--text-on-light);         /* Títulos / corpo */
+  --vp-c-text-2:         var(--text-body);             /* Subtítulos, descrições */
+  --vp-nav-bg-color:     var(--color-white);           /* Fundo da navbar */
+  --vp-nav-text-color:   var(--text-heading);          /* Cor padrão navbar */
+  --vp-nav-hover-color:  var(--color-hover);           /* Hover na navbar */
 }
 
-/* ===== MODO ESCURO ===== */
+/* ===== 🌙 MODO ESCURO ===== */
 :root.dark {
+  /* 🎨 Ajustes para contraste e legibilidade */
   --color-border:        #ffffff20;
   --color-bg:            #0f172a;
 
-  /* Texto */
+  /* 📝 Cores de texto para fundo escuro */
   --text-on-light:       #e2e8f0;
   --text-on-dark:        #f8fafc;
 
-  /* 🎯 Override dos tokens do VitePress (modo escuro) */
+  /* 🎯 Overrides para modo escuro */
   --vp-c-brand-1:        var(--color-involves);
   --vp-c-brand-soft:     var(--color-involves-120);
   --vp-c-bg:             #181028;

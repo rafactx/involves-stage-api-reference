@@ -1,41 +1,25 @@
 {
   "compilerOptions": {
-    // 🧠 Usa o máximo da linguagem atual
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler", // ⚡ Ideal com Vite/VitePress
-
-    // 🔒 Ativa verificações rigorosas de tipo
+    "moduleResolution": "Bundler",
     "strict": true,
-
-    // 🔧 Mantém JSX em Vue3 (vitepress usa como template)
     "jsx": "preserve",
-
-    // 📦 Permite importar arquivos .json diretamente
     "resolveJsonModule": true,
-
-    // 🔃 Interop com módulos CommonJS (útil p/ dependências antigas)
     "esModuleInterop": true,
-
-    // 🚫 Pula verificação de tipagem de libs externas para acelerar build
     "skipLibCheck": true,
-
-    // ❌ Não gera arquivos .js ao compilar
     "noEmit": true,
-
-    // ✔️ Permite imports com extensão `.ts` (comum em ESM puro)
     "allowImportingTsExtensions": true,
-
-    // 📦 Define tipos globais usados pelo projeto
     "types": ["vitepress/client", "node"],
+    
+    // 🗂️ Base para aliases
+    "baseUrl": "./docs/.vitepress",
 
-    // 🗂️ Ajuda o VSCode a resolver caminhos
-    "baseUrl": ".",
+    // 📦 Alias para caminhos bonitos
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["theme/*"]
     },
 
-    // 🧪 Melhor experiência com sugestões e consistência cross-platform
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true
   },

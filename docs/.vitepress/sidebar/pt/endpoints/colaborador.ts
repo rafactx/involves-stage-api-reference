@@ -1,4 +1,4 @@
-import type { SidebarGroup } from '../pt-sidebar'
+import type { SidebarGroup } from '../../pt-sidebar'
 
 export const colaboradorSidebar: SidebarGroup = [
   {

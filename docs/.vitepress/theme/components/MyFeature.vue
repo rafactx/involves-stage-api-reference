@@ -14,7 +14,25 @@
 </template>
 
 <script setup lang="ts">
-// 🎯 Props bem definidas com tipagem explícita
+/**
+ * Componente MyFeature.vue
+ *
+ * Representa um card visual animado com informações de destaque na home da documentação.
+ * Exibe título, descrição e link de navegação, com entrada animada controlada via `@vueuse/motion`.
+ * Utilizado dentro do `FeatureList.vue`.
+ */
+
+import { ref } from 'vue'
+import { useMotion } from '@vueuse/motion'
+
+/**
+ * Props obrigatórias que descrevem o conteúdo do card.
+ *
+ * @prop title - Título principal exibido (com ícone embutido, ex: 📘 Guia da API)
+ * @prop details - Descrição curta do recurso
+ * @prop link - Caminho ou URL de navegação
+ * @prop index - Índice usado para escalonar a animação
+ */
 const props = defineProps<{
   title: string
   details: string
@@ -22,13 +40,16 @@ const props = defineProps<{
   index: number
 }>()
 
-// 📦 Ref do card animado
-import { ref } from 'vue'
+/**
+ * Elemento DOM que será animado ao entrar na viewport.
+ */
 const cardEl = ref<HTMLElement | null>(null)
 
-// ✨ Animação ao entrar na viewport
-import { useMotion } from '@vueuse/motion'
-
+/**
+ * Controla a animação de entrada do card usando `useMotion`.
+ * Cada card tem um pequeno atraso com base em seu índice,
+ * criando efeito de cascata ao renderizar.
+ */
 useMotion(cardEl, {
   initial: { opacity: 0, y: 20 },
   enter: {

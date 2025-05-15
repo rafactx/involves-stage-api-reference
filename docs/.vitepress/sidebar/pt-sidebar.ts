@@ -1,12 +1,25 @@
+// .vitepress/sidebar/pt-sidebar.ts
+
+/**
+ * 🎯 Definição da sidebar em português (pt-BR) para a documentação.
+ * 
+ * Essa estrutura agrupa os principais blocos da doc, incluindo:
+ * - Guia inicial com boas práticas
+ * - Endpoints organizados por módulo
+ * - Endpoints descontinuados
+ * 
+ * As seções são construídas a partir de arquivos modulares para facilitar manutenção e versionamento.
+ */
+
 import type { DefaultTheme } from 'vitepress'
 
-// 📘 Guia da API
+// 📘 Bloco: Guia da API (ex: autenticação, versionamento)
 import { guiaSidebar } from './pt/guia'
 
-// 🧱 Endpoints Descontinuados
+// 🧱 Bloco: Endpoints descontinuados
 import { descontinuadosSidebar } from './pt/descontinuados'
 
-// 🚀 Endpoints Modulares
+// 🚀 Blocos: Endpoints ativos por domínio (ex: Colaborador, Produto, PDV)
 import {
   colaboradorSidebar,
   pesquisaSidebar,
@@ -17,13 +30,20 @@ import {
 } from './pt/endpoints'
 
 /**
- * 📚 Sidebar da documentação em Português.
+ * 📚 Estrutura da sidebar da documentação em Português.
+ *
+ * Agrupada por:
+ * - Guia da API
+ * - Endpoints REST organizados por módulo
+ * - Endpoints descontinuados
+ *
+ * Cada entrada é representada por uma rota (prefixo) e um conjunto de itens.
  */
 export const ptSidebar: DefaultTheme.Sidebar = {
-  // 📘 Guia da API
+  // 📘 Seção: Guia da API
   '/pt/guia-da-api': guiaSidebar,
 
-  // 🚀 Endpoints principais
+  // 🚀 Seção: Endpoints organizados por módulo
   '/pt/endpoints/': [
     {
       text: '📂 Endpoints',
@@ -40,14 +60,14 @@ export const ptSidebar: DefaultTheme.Sidebar = {
     ...roteiroSidebar
   ],
 
-  // 🧱 Endpoints descontinuados
+  // 🧱 Seção: Endpoints descontinuados (mantidos para referência)
   '/pt/endpoints-descontinuados-sync/': descontinuadosSidebar
 }
 
 /**
- * 🛡️ Tipagem auxiliar para garantir consistência nos arquivos modulares.
+ * 🛡️ Tipo auxiliar para agrupar subgrupos da sidebar.
+ * 
+ * Garante consistência e suporte a propriedades como `collapsed`.
+ * Usado nos arquivos modulares (ex: colaborador.ts, produto.ts).
  */
-export type SidebarGroup = DefaultTheme.SidebarItem & {
-  collapsed?: boolean
-  items: DefaultTheme.SidebarItem[]
-}[]
+export type SidebarGroup = DefaultTheme.SidebarItem[]

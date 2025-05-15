@@ -1,18 +1,19 @@
 // /theme/components/features.ts
 
 /**
- * Lista de destaques da home por idioma.
- * Cada item será renderizado como um card animado na seção de features.
+ * Lista de recursos exibidos na home da documentação, organizados por idioma.
+ *
+ * Cada item do array representa uma funcionalidade destacada (feature), contendo:
+ * - um título com ícone visual
+ * - uma descrição curta e objetiva
+ * - e um link para navegação interna ou externa
+ *
+ * Essa estrutura é consumida pelo componente `FeatureList.vue`,
+ * que faz o mapeamento dinâmico com base no idioma atual.
+ *
+ * @type {Record<Lang, Feature[]>}
  */
-
-export type Feature = {
-  title: string
-  details: string
-  link: string
-}
-
-export const supportedLangs = ['pt', 'en', 'es', 'fr'] as const
-export type Lang = typeof supportedLangs[number]
+import type { Feature, Lang } from '../types'
 
 export const features: Record<Lang, Feature[]> = {
   pt: [

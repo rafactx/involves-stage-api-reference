@@ -1,38 +1,36 @@
 
-/* ============================
-   Ajustes para sidebar mobile
-============================ */
+/* =============================
+   📱 Sidebar - Ajustes para Mobile
+============================= */
 @media (max-width: 768px) {
   .VPSidebar {
     padding: 2rem 1rem 0;
   }
-
   .VPSidebar .VPSidebarItem {
     font-size: 0.95rem;
     line-height: 1.4;
   }
-
   .VPSidebar .VPSidebarItem + .VPSidebarItem {
     margin-top: 0.5rem;
   }
-
   .VPSidebar .VPSidebarItem > a {
     padding: 0.5rem 0.75rem;
     display: block;
     border-radius: var(--radius-default);
   }
-
   .VPSidebar .VPSidebarItem > a:hover {
     background-color: var(--vp-c-brand-soft);
   }
 }
 
-/* AnimaÃ§Ã£o suave na abertura da sidebar */
+/* ✨ Transição suave da sidebar */
 .VPSidebar {
   transition: var(--transition-fast);
 }
 
-/* ========= NAVBAR CUSTOM ========= */
+/* =============================
+   🧭 Barra de Navegação (Navbar)
+============================= */
 .VPNavBar {
   position: sticky;
   top: 0;
@@ -41,106 +39,99 @@
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* ===== Light Theme ===== */
+/* ☀️ Navbar - Tema Claro */
 html:not(.dark) .VPNavBar {
   background-color: var(--vp-nav-bg-color) !important;
   box-shadow: none !important;
   border-bottom: none !important;
 }
-
 html:not(.dark) .VPNavBar a {
   color: var(--vp-nav-text-color) !important;
   transition: color 0.3s ease-in-out;
 }
-
 html:not(.dark) .VPNavBar a:hover {
   color: var(--vp-nav-hover-color) !important;
 }
 
-/* ===== Dark Theme ===== */
+/* 🌙 Navbar - Tema Escuro */
 html.dark .VPNavBar {
   background-color: var(--vp-nav-bg-color) !important;
   box-shadow: none !important;
   border-bottom: none !important;
 }
-
 html.dark .VPNavBar a {
   color: var(--vp-nav-text-color) !important;
   transition: color 0.3s ease-in-out;
 }
-
 html.dark .VPNavBar a:hover {
   color: var(--vp-nav-hover-color) !important;
 }
 
-/* ========= NAVBAR COM SOMBRA AO ROLAR ========= */
+/* 🧭 Sombra dinâmica na navbar ao rolar */
 html:not(.scrolled) .VPNavBar {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
-
 html.scrolled .VPNavBar {
   box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* ========= Logo na Navbar ========= */
+/* =============================
+   🎨 Logo da Navbar
+============================= */
 .VPNavBarTitle {
   display: flex;
   align-items: center;
   height: 100%;
 }
-
 .VPNavBarTitle .VPImage.logo {
   max-height: 64px !important;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
-
 .VPNavBarTitle .VPImage.logo:hover {
   transform: scale(1.04);
 }
-
 @media (max-width: 600px) {
   .VPNavBarTitle .VPImage.logo {
     max-height: 44px !important;
   }
 }
 
-/* ========= HERO ========== */
+/* =============================
+   🚀 Seção Hero - Home Page
+============================= */
 .hero[data-visible="false"],
 .feature[data-visible="false"] {
   opacity: 0;
   transform: translateY(24px);
 }
-
 .hero[data-visible="true"],
 .feature[data-visible="true"] {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-
 .home-container {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
-
 .hero p {
   font-size: 1.1rem;
   margin: 0.25rem 0;
 }
-
 .tagline {
   color: var(--vp-c-text-2);
 }
 
-/* ========= BUTTONS ========= */
+/* =============================
+   🎯 Botões de Ação (Hero)
+============================= */
 .actions {
   margin-top: 1.5rem;
   display: flex;
@@ -148,7 +139,6 @@ html.scrolled .VPNavBar {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
 .button {
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-default);
@@ -156,195 +146,20 @@ html.scrolled .VPNavBar {
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
 .button:hover {
   transform: scale(1.02);
 }
-
 .button.brand {
   background: var(--vp-c-brand-1);
   color: var(--text-on-primary);
 }
-
 .button.brand:hover {
   background: var(--color-involves-120);
 }
-
 .button.alt {
   border: 1px solid var(--color-involves-20);
   color: var(--color-involves-140);
 }
-
 .button.alt:hover {
   background: var(--color-involves-10);
 }
-
-/* ========= FEATURES ========= */
-.features {
-  margin-top: 3rem;
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.feature {
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-}
-
-.feature:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-}
-
-.feature h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.feature-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--vp-c-brand-1);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.feature-link:hover {
-  text-decoration: underline;
-}
-
-/* ========= DARK MODE para cards ========= */
-.dark .feature {
-  background: var(--vp-c-bg-soft);
-  border-color: var(--vp-c-brand-soft);
-  color: var(--vp-c-text-1);
-}
-
-/* ========= MOBILE ========= */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 1.75rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-/* =============================
-   🎯 Hero Image - Home Page
-============================= */
-
-.VPHomeHero .image {
-  width: 100%;
-  max-width: 960px !important; /* antes era 720px */
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-}
-
-.VPHomeHero .image:hover {
-  transform: scale(1.03);
-}
-
-/* Tablets grandes */
-@media (max-width: 1200px) {
-  .VPHomeHero .image {
-    max-width: 800px !important;
-  }
-}
-
-/* Tablets comuns */
-@media (max-width: 1024px) {
-  .VPHomeHero .image {
-    max-width: 600px !important;
-  }
-}
-
-/* Celulares grandes */
-@media (max-width: 768px) {
-  .VPHomeHero .image {
-    max-width: 420px !important;
-  }
-}
-
-/* Celulares pequenos */
-@media (max-width: 480px) {
-  .VPHomeHero .image {
-    max-width: 90vw !important;
-  }
-}
-
-/* =============================
-   🎯 Estilo da Sidebar - Branco
-============================= */
-
-/* Fundo branco para sidebar */
-.VPSidebar {
-  background-color: #ffffff !important;
-  border-right: 1px solid #e5e7eb; /* borda sutil para separar do conteúdo */
-}
-
-/* Ajustes de cor dos itens */
-.VPSidebar .VPSidebarItem a {
-  color: #1f0e3d;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
-
-.VPSidebar .VPSidebarItem a:hover {
-  background-color: #f9fafb;
-}
-
-/* Estilo de grupo (GET, POST, etc.) */
-.VPSidebar .VPSidebarItem .text {
-  font-size: 0.9rem;
-}
-
-/* Dark mode (preserva a coerência) */
-.dark .VPSidebar {
-  background-color: #0f172a !important;
-  border-right: 1px solid #1e293b;
-}
-
-.dark .VPSidebar .VPSidebarItem a {
-  color: #f1f5f9;
-}
-
-.dark .VPSidebar .VPSidebarItem a:hover {
-  background-color: #1e293b;
-}
-
-/* Bloco Tip com cor azul personalizada */
-.custom-block.tip {
-  background-color: #e0f2fe; /* azul claro suave */
-  border-left: 4px solid #3b82f6; /* azul VitePress / cURL */
-  color: #1e3a8a;
-}
-
-.custom-block.tip code {
-  background-color: rgba(59, 130, 246, 0.1);
-  color: #1e40af;
-}
-
-.dark .custom-block.tip {
-  background-color: #1e3a8a;
-  border-left-color: #60a5fa;
-  color: #dbeafe;
-}
-
-.dark .custom-block.tip code {
-  background-color: rgba(147, 197, 253, 0.2);
-  color: #bfdbfe;
-}
-
-
-
