@@ -1,0 +1,16 @@
+{
+  "tasks": {
+    "build": {
+      "outputs": ["docs/.vitepress/dist/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "format": {
+      "outputs": []
+    }
+  }
+}

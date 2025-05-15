@@ -17,3 +17,6 @@ docs/.vitepress/temp/
 
 # VSCode
 .vscode/
+
+# Turbo cache
+.turbo/
