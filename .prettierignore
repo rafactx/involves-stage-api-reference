@@ -6,3 +6,6 @@ dist
 *.log
 *.svg
 *.ico
+.vitepress
+.output
+.husky

@@ -6,46 +6,58 @@
   "author": "Rafael Teixeira",
   "license": "MIT",
   "packageManager": "pnpm@10.9.0",
-    "scripts": {
+  "scripts": {
     "dev": "vite",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint . --ext .ts,.js,.md --ignore-path .gitignore",
+    "lint": "eslint . --ext .ts,.js,.md",
     "check:lint": "eslint . --ext .ts,.js,.md",
     "format": "prettier --write .",
     "check:format": "prettier --check .",
     "fix:labels": "node scripts/update-codegroup-labels.js",
     "clean:dividers": "node scripts/remove-asterisk-dividers.js",
-    "commit": "cz"
+    "cz": "commitizen",
+    "prepare": "husky install"
   },
-    "engines": {
+  "engines": {
     "node": ">=18.0.0 <=22.14.0",
     "npm": ">=8.0.0"
   },
-    "dependencies": {
+  "dependencies": {
     "@vueuse/motion": "^3.0.3",
     "lucide-vue": "^0.510.0",
     "lucide-vue-next": "^0.510.0",
     "slugify": "^1.6.6",
     "vitepress": "^1.2.0"
   },
-    "devDependencies": {
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
     "@types/node": "^22.15.17",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.31.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.25.1",
+    "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-vue": "^10.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
     "prettier": "^3.5.3",
     "tsx": "^4.19.4",
+    "typescript-eslint": "^8.32.1",
     "vite": "^6.3.5",
-    "vue": "^3.5.13",
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0"
+    "vue": "^3.5.13"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  } 
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }

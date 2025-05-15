@@ -29,6 +29,25 @@
 import DefaultTheme from 'vitepress/theme'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
+import { useRouter, useRoute } from 'vitepress'
+
+const router = useRouter()
+const route = useRoute()
+
+onMounted(() => {
+  if (route.path === '/') {
+    const lang = navigator.language || navigator.userLanguage
+    const preferred = lang.toLowerCase().slice(0, 2)
+
+    const supported = ['pt', 'en', 'es', 'fr']
+    const fallback = 'pt'
+
+    const targetLang = supported.includes(preferred) ? preferred : fallback
+
+    router.go(`/${targetLang}/`)
+  }
+})
+
 
 // Componentes personalizados
 import MyHero from './components/MyHero.vue'
