@@ -71,7 +71,7 @@ pnpm format          # Formata os arquivos com Prettier
 
 ## 🤝 Contribuição
 
-Pull requests são bem-vindos!  
+Pull requests são bem-vindos.
 Abra uma [issue](https://github.com/rafactx/involves-stage-api-reference/issues) com sugestões, bugs ou melhorias.
 
 ## 🗂️ Licença
